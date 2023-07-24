@@ -6,20 +6,216 @@
     box-sizing: border-box;
     font-family: "Merriweather Sans", sans-serif;
 }
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+.grant-access button{
+    cursor: pointer;
+    user-select: none;
+}
 .wrapper{
     background-color: #181818;
     color: #e0dede;
     height: 100vh;
     margin: 0 auto;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    align-items: center;
+    justify-content: center;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vmax;
+    font-size: 2em;
+}
+.tabs{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+.grant-access{
+    display: none;
+}
+.grant-access.active{
+    border: 1px solid #dadadad7;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    width: 18rem;
+    text-align: center;
+    font-size: 1.25 em;
+    padding: 6px 10px;
+    padding-bottom: 15px;
+    margin-top: 1.5em;
+}
+.grant-access svg{
+    width: 80px;
+    height: 100px;
+    aspect-ratio: 1;
+}
+
+.tab {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  /* letter-spacing: 2px; */
+  text-decoration: none;
+  /* text-transform: uppercase; */
+  background-color: #000;
+  color: #f0eeee;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  /* margin-top: 1em; */
+}
+
+.tab:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
 }
 .currentTab{
     background-color: #8b8a8a;
+    color: #fdf9f9;
 }
-/* .active{
+.searchform-container{
     display: none;
-} */
-/* grant-Acces button */
-.grant-access button{
+}
+.searchform-container.active{
+    margin-top: 1.5em;
+    display:flex;
+}
+
+.searchform-container form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vmax;
+}
+.searchform-container button{
+    background: 0;
+    border: 0;
+    outline: none;
     cursor: pointer;
-    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchform-container svg{
+    transition: all ease-out 0.2s;
+}
+.searchform-container button:hover svg{
+    transform: scale(1.2);
+}
+
+.weatherInfo{
+    display: none;
+}
+.weatherInfo.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    gap: 2vh;
+    border: 1px solid #8b8a8a;
+    border-radius: 10px;
+    width: 20%;
+    padding: 5px 8px;
+    margin-top: 1.5em;
+}
+.weatherInfo h3{
+    font-size: 2vw;
+}
+.weatherInfo p{
+    font-size: 1.2vw;
+}
+.weatherInfo span{
+    font-size: 2vw;
+}
+.weatherInfo img{
+    background-color: #e0dede;
+    aspect-ratio: 1;
+    width: 30px;
+    border-radius: 3px;
+}
+.loader{
+    display: none;
+}
+.loader.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+}
+input {
+  background: 0;
+  border: 0;
+  outline: none;
+  padding: 3px 6px ;
+  width: 40vw;
+  max-width: 200px;
+  font-size: 1.2em;
+  transition: padding 0.3s 0.2s ease;
+  color: #e0dede    ;  
+  &:focus {
+    padding-bottom: 5px;
+  }
+
+  &:focus + .line {
+    &:after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.field {
+  position: relative;
+
+  .line {
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: -8px;
+    background: #ffffff;
+
+    &:after {
+      content: " ";
+      position: absolute;
+      float: right;
+      width: 100%;
+      height: 3px;
+      
+      transform: scalex(0);
+      transition: transform 0.3s ease;
+      
+      background: #fff000;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .tab {
+    padding: 0.25em 0.75em;
+  }
+}
+@media (max-width:559px) {
+    .tabs{
+        width: 300px;
+    }
 }
