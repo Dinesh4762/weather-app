@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Merriweather Sans", sans-serif;
+}
+.wrapper{
+    background-color: #181818;
+    color: #e0dede;
+    height: 100vh;
+    margin: 0 auto;
+}
+.currentTab{
+    background-color: #8b8a8a;
+}
+/* .active{
+    display: none;
+} */
+/* grant-Acces button */
+.grant-access button{
+    cursor: pointer;
+    user-select: none;
+}
