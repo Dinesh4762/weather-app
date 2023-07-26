@@ -24,7 +24,6 @@ html,body{
 
     display: flex;
     flex-direction: column;
-    gap: 2vw;
     align-items: center;
     justify-content: center;
 }
@@ -34,12 +33,16 @@ html,body{
     align-items: center;
     gap: 1vmax;
     font-size: 2em;
+    position: fixed;
+    top: 7rem;
 }
 .tabs{
-    width: 500px;
+    width: 400px;
     display: flex;
     justify-content: space-between;
     margin-top: 2em;
+    position: fixed;
+    top: 10rem;
 }
 .grant-access{
     display: none;
@@ -51,26 +54,25 @@ html,body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2vw;
-    width: 18rem;
+    gap: 2rem;
+    height: 14rem;
+    width: 16rem;
     text-align: center;
-    font-size: 1.25 em;
-    padding: 6px 10px;
-    padding-bottom: 15px;
-    margin-top: 1.5em;
+    font-size: 1.1em;
+    padding: 0 25px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-top: 7.5em;
 }
 .grant-access svg{
     width: 80px;
     height: 100px;
-    aspect-ratio: 1;
 }
 
 .tab {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
-  /* letter-spacing: 2px; */
   text-decoration: none;
-  /* text-transform: uppercase; */
   background-color: #000;
   color: #f0eeee;
   cursor: pointer;
@@ -81,7 +83,6 @@ html,body{
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  /* margin-top: 1em; */
 }
 
 .tab:active {
@@ -97,7 +98,7 @@ html,body{
     display: none;
 }
 .searchform-container.active{
-    margin-top: 1.5em;
+    margin-top: 7.5em;
     display:flex;
 }
 
@@ -131,22 +132,22 @@ html,body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    height: 12rem;
+    width: 16rem;
     gap: 2vh;
     border: 1px solid #8b8a8a;
     border-radius: 10px;
-    width: 20%;
     padding: 5px 8px;
-    margin-top: 1.5em;
+    margin-top: 4em;
 }
 .weatherInfo h3{
-    font-size: 2vw;
+    font-size: 2em;
 }
 .weatherInfo p{
-    font-size: 1.2vw;
+    font-size: 1.2em;
 }
 .weatherInfo span{
-    font-size: 2vw;
+    font-size: 2em;
 }
 .weatherInfo img{
     background-color: #e0dede;
@@ -163,6 +164,7 @@ html,body{
     justify-content: center;
     align-items: center;
     gap: 2vh;
+    margin-top: 2em;
 }
 input {
   background: 0;
@@ -218,4 +220,23 @@ input {
     .tabs{
         width: 300px;
     }
+    :root{
+        font-size: 12px ;
+    }
+    .weatherInfo.active{
+        height: 14rem;
+        width: 18rem;
+    }
+    .header{
+        top: 12rem;
+    }
+    .tabs{
+        top: 15rem;
+    }
+    .grant-access.active{
+        height: 18rem;
+        width: 20rem;
+        gap: 2rem;
+        font-size: 1.35rem;
+    }   
 }
